@@ -15,7 +15,7 @@ void dft(double complex *l, double complex *yf, int N) {
 
 void fft(double complex *l, double complex *yf, int N) {
 	//printf("%d\n", N);
-	if(N<=16) {
+	if(N<=4) {
 		dft(l, yf, N);
 		return;
 	}

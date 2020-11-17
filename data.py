@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from math import log, sin, cos, pi
 
 cplx = 0
-N = 4096*16
+N = 4096*2
 fsamp = 44100
 dt = 1/fsamp
 

@@ -1,22 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <complex.h>
-// #include "fft.h"
+#include "fft.h"
 
 #define PI 3.14159265358979
 
-void dft(double complex *l, double complex *yf, int N) {
-	for(int k = 0; k<N; k++) {
-		double complex t = 0;
-		for(int n = 0; n<N; n++)
-			t+=l[n]*cexp(-I*2*PI*k*n/N);
-		yf[k] = t;
-	}
-}
-
 int main() {
 	int N = 0, fsamp = 0, cplx;
-	FILE *ul = fopen("izlaz.dat", "r");
+	FILE *ul = fopen("fft_c.dat", "r");
 
 	fscanf(ul, "%d %d %d\n", &N, &fsamp, &cplx);
 	printf("%d %d %d\n", N, fsamp, cplx);
@@ -30,7 +21,7 @@ int main() {
 		l[i] = r + im * I;
 	}
 
-	dft(l, yf, N);
+	ifft(l, yf, N);
 
 	// for(int i = 0; i<10; i++)
 	// 	printf("%lf %lf\n", creal(l[i]), cimag(l[i]));
@@ -38,7 +29,7 @@ int main() {
 	free(l);
 	fclose(ul);
 
-	FILE *iz = fopen("dft_c.dat", "w");
+	FILE *iz = fopen("ifft.dat", "w");
 
 	fprintf(iz, "%d %d %d", N, fsamp, 1);
 	for(int i = 0; i<N; i++)
