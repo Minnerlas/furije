@@ -29,7 +29,7 @@ void idft(double complex *l, double complex *yf, uint64_t N) {
 void fft(double complex *l, double complex *yf, uint64_t N) {
 	//printf("%d\n", N);
 	if(N%2>0) {
-		printf("N must be even.\n");
+		printf("N must be even.\n"), yf = NULL;
 		return;
 	} else if(N<=4) {
 		dft(l, yf, N);
@@ -64,7 +64,7 @@ void fft(double complex *l, double complex *yf, uint64_t N) {
 void ifft(double complex *l, double complex *yf, uint64_t N) {
 	//printf("%d\n", N);
 	if(N%2>0) {
-		printf("N must be even.\n");
+		printf("N must be even.\n"), yf = NULL;
 		return;
 	} else if(N<=4) {
 		idft(l, yf, N);
