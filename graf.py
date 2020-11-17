@@ -40,6 +40,6 @@ print(l2)
 xf1 = np.linspace(0.0, 1.0/(2.0*dt1), N1//2)
 xf2 = np.linspace(0.0, 1.0/(2.0*dt2), N2//2)
 
-plt.plot(xf1, np.abs(l1[:N1//2]))
-plt.plot(xf2, np.abs(l2[:N2//2]))
+plt.plot(xf1, 2/N1 * np.abs(l1[:N1//2]))
+plt.plot(xf2, 2/N2 * np.abs(l2[:N2//2]))
 plt.show()

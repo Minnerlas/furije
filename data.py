@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from math import log, sin, cos, pi
 
 cplx = 0
-N = 4096*64
+N = 4096*256
 fsamp = 44100
 dt = 1/fsamp
 
@@ -19,8 +19,8 @@ l = np.ndarray(N)
 for i in range(N):
     l[i] = 2*sin(i*dt*omega) + sin(i*dt*omega2)
 
-plt.plot(l)
-plt.show()
+# plt.plot(l)
+# plt.show()
 
 izlaz = "izlaz.dat"
 

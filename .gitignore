@@ -1,4 +1,6 @@
 ifft
 dft_c
 fft_c
+fft2
+*.dat
 *.png
